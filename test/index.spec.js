@@ -27,3 +27,5 @@ describe('pig latin to english', function() {
   });
 
 });
+
+describe();
