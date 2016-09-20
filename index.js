@@ -5,6 +5,9 @@ pigLatinizer = function(input, toOrFrom) {
   if(typeof input !== 'string' || typeof toOrFrom !== 'string') {
     throw new TypeError('first argument must be the string to translate and second argument must be `to` or `from` pig Latin');
   }
+  if(input.length < 1 || toOrFrom.length < 1) {
+    throw new TypeError('string cannot be empty');
+  }
 
   if(toOrFrom === 'to') {
     if(vowels.indexOf(input.charAt(0)) > -1) {
