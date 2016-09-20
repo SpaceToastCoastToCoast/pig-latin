@@ -11,6 +11,7 @@ describe('english to pig latin', function() {
 
   it('should translate words beginning with consonants', function() {
     expect(pigLatinizer('banana', 'to')).to.deep.equal('anana-bay');
+    expect(pigLatinizer('trash', 'to')).to.deep.equal('ash-tray');
   });
 
   it('should translate words beginning with vowels', function() {
