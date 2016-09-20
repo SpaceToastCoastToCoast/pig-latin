@@ -17,3 +17,11 @@ describe('english to pig latin', function() {
     expect(pigLatinizer('omelet', 'to')).to.deep.equal('omeletay');
   });
 });
+
+describe('pig latin to english', function() {
+  it('should translate words with hyphens', function() {
+    expect(pigLatinizer('ash-tray', 'from')).to.deep.equal('trash');
+  });
+
+
+});
