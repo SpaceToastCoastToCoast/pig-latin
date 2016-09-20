@@ -1,15 +1,31 @@
-pigLatinizer = function(input, toOrFrom) {
+pigLatinizer = function(word, toOrFrom) {
   var str;
   var vowels = ['a', 'e', 'i', 'o', 'u'];
 
-  if(typeof input !== 'string' || typeof toOrFrom !== 'string') {
+  if(typeof word !== 'string' || typeof toOrFrom !== 'string') {
     throw new TypeError('first argument must be the string to translate and second argument must be `to` or `from` pig Latin');
   }
-  if(input.length < 1 || toOrFrom.length < 1) {
+  if(word.length < 1 || toOrFrom.length < 1) {
     throw new TypeError('string cannot be empty');
   }
 
-  if(toOrFrom === 'to') {
+  var multipleWords = word.split(' ');
+
+  if(multipleWords.length > 1) {
+    var result = "";
+    for(var w in multipleWords) {
+      result += toPigLatin(multipleWords[w]) + " ";
+    }
+    return result.trim();
+  } else {
+    if(toOrFrom === 'to') {
+      return toPigLatin(word);
+    } else {
+      return fromPigLatin(word);
+    }
+  }
+
+  function toPigLatin(input) {
     if(vowels.indexOf(input.charAt(0)) > -1) {
       str = input += 'ay';
       return str;
@@ -27,7 +43,9 @@ pigLatinizer = function(input, toOrFrom) {
       str += ('-' + startChar + 'ay');
       return str;
     }
-  } else if (toOrFrom === 'from') {
+  }
+
+  function fromPigLatin(input) {
     if(input.indexOf('-') > -1) {
       str = input.substring(input.lastIndexOf('-') + 1, input.lastIndexOf('a'));
       str += input.substring(0, input.lastIndexOf('-'));
@@ -36,8 +54,6 @@ pigLatinizer = function(input, toOrFrom) {
       str = input.substring(0, input.length - 2);
       return str;
     }
-  } else {
-    throw new Error('second argument must be `to` or `from`');
   }
 
   return str;
