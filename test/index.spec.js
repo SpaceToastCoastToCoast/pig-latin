@@ -38,6 +38,6 @@ describe('whole phrases in either direction', function() {
   });
   it('should translate a sentence or whole phrase from pig latin to english', function() {
     expect(pigLatinizer('is-Thay ig-Pay atin-Lay ase-phray ill-way e-bay anslated-tray ack-bay into-ay e-thay ative-nay anguage-lay -asay -aay ing.-stray',
-    'from')).to.deep.equal('This phrase will be converted into piglatin, please insert your phrase here.');
+    'from')).to.deep.equal('This Pig Latin phrase will be translated back into the native language as a string.');
   });
 });
