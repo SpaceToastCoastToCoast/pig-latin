@@ -11,8 +11,16 @@ pigLatinizer = function(input, toOrFrom) {
       str = input += 'ay';
       return str;
     } else {
-      var startChar = input.charAt(0).toLowerCase();
-      str = input.slice(1);
+      var firstVowel = 'a';
+      var firstVowelIndex = input.length;
+      for(var char in vowels) {
+        if(input.indexOf(vowels[char]) < firstVowelIndex && input.indexOf(vowels[char]) > -1) {
+          firstVowel = vowels[char];
+          firstVowelIndex = input.indexOf(firstVowel);
+        }
+      }
+      var startChar = input.substring(0, firstVowelIndex);
+      str = input.slice(firstVowelIndex);
       str += ('-' + startChar + 'ay');
       return str;
     }
