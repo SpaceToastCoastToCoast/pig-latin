@@ -13,8 +13,14 @@ pigLatinizer = function(word, toOrFrom) {
 
   if(multipleWords.length > 1) {
     var result = "";
-    for(var w in multipleWords) {
-      result += toPigLatin(multipleWords[w]) + " ";
+    if(toOrFrom === 'to') {
+      for(var w in multipleWords) {
+        result += toPigLatin(multipleWords[w]) + " ";
+      }
+    } else {
+      for(var w in multipleWords) {
+        result += fromPigLatin(multipleWords[w]) + " ";
+      }
     }
     return result.trim();
   } else {
