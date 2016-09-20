@@ -6,6 +6,8 @@ const expect = chai.expect;
 describe('english to pig latin', function() {
   it('should accept two string arguments', function() {
     expect(pigLatinizer.bind(null, 'banana')).to.throw(TypeError);
+    expect(pigLatinizer.bind(null, '', 'to')).to.throw(TypeError);
+    expect(pigLatinizer.bind(null, 'banana', '')).to.throw(TypeError);
     expect(pigLatinizer.bind(null, ['cat'], { word : 'to' })).to.throw(TypeError);
   });
 
