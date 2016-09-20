@@ -1,4 +1,4 @@
-pigLatinizer = function(input) {
+pigLatinizer = function(input, toOrFrom) {
   var str;
 };
 
