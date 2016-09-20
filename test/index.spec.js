@@ -34,7 +34,7 @@ describe('pig latin to english', function() {
 describe('whole phrases in either direction', function() {
   it('should translate a phrase or sentence from english to pig latin', function() {
     expect(pigLatinizer('This phrase will be converted into piglatin, please insert your phrase here.',
-    'to')).to.deep.equal('is-Thay ig-Pay atin-Lay ase-phray ill-way e-bay anslated-tray ack-bay into-ay e-thay ative-nay anguage-lay -asay -aay ing.-stray');
+    'to')).to.deep.equal('is-Thay ase-phray ill-way e-bay onverted-cay intoay iglatin,-pay ease-play insertay our-yay ase-phray ere.-hay');
   });
   it('should translate a sentence or whole phrase from pig latin to english', function() {
     expect(pigLatinizer('is-Thay ig-Pay atin-Lay ase-phray ill-way e-bay anslated-tray ack-bay into-ay e-thay ative-nay anguage-lay -asay -aay ing.-stray',
