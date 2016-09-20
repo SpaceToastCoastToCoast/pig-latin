@@ -22,6 +22,8 @@ describe('pig latin to english', function() {
   it('should translate words with hyphens', function() {
     expect(pigLatinizer('ash-tray', 'from')).to.deep.equal('trash');
   });
-
+  it('should translate words without hyphens', function() {
+    expect(pigLatinizer('omeletay', 'from')).to.deep.equal('omelet');
+  });
 
 });
